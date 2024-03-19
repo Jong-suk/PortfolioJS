@@ -5,15 +5,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './css/style.css'
 import './css/font-awesome.css'
 import './css/responsive.css'
-import './css/skins/color-1.css'
-// import './css/skins/color-2.css'
-// import './css/skins/color-3.css'
-// import './css/skins/color-4.css'
-// import './css/skins/color-5.css'
 import './css/style-switcher.css'
 
 import Header from './components/Header'
 import NavigationMenu from './components/NavigationMenu'
+import StyleSwitcher from './components/StyleSwitcher'
 
 import Home from './screens/Home';
 import About from './screens/About';
@@ -34,6 +30,7 @@ const App = () => {
       <Router>
         <Header openMenu={toggleMenu}/>
         <Container>
+          <StyleSwitcher />
           <Routes>
             <Route path="/" element={<Home />} exact />
             <Route path="/about" element={<About />} />

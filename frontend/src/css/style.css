@@ -9,6 +9,7 @@ global style
 --------------------*/
 /*--Custom Variable Definition--*/
 :root {
+    --skin-color:#fb839e;
     --bg-black-900: #000000;
     --bg-black-100: #dddddd;
     --bg-black-50: #eff0f4;
