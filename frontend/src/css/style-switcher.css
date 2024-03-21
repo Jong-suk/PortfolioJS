@@ -37,13 +37,6 @@
 .style-switcher .day-night{
     top:55px;
 }
-.style-switcher h4{
-    margin:0 0 10px;
-    color: var(--text-black-700);
-    font-style: 16px;
-    font-weight: 600;
-    text-transform: capitalize;
-}
 .style-switcher .colors{
     display: flex;
     flex-wrap: wrap;

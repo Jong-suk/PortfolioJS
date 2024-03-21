@@ -127,6 +127,30 @@ const portfolioItems = [
       "date": "2023",
       "tools": ["Salesforce Data Modelling & Configuration", "LWC", "Apex"],
       "webLink": ""
+    },
+    {
+      "category": "web-ui/ux",
+      "title": "SalesCart Connect",
+      "imgSrc": "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/thumb/project-8.png",
+      "screenshots": [
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/0.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/1.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/2.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/3.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/4.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/5.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/6.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/7.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/8.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/9.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/10.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/11.png",
+        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/12.png",
+      ],
+      "description": "This project is a design and working model of how the actual e-com website will work.",
+      "date": "2024",
+      "tools": ["Figma"],
+      "webLink": "https://www.figma.com/proto/mN4OhsuwDSNzr6y5lnt4jh/Web-Design?node-id=177-328&starting-point-node-id=177%3A328&scaling=scale-down&mode=design&t=5CuZ05W4viVkQJ2S-1"
     }
 ]
 

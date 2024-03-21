@@ -73,7 +73,11 @@ const PortfolioPopup = ({portfolioItem}) => {
                                 <ul>
                                     <li>Date - <span>{portfolioItem.date}</span></li>
                                     <li>Tools - <span>{portfolioItem.tools.join(', ')}</span></li>
-                                    <li>Web - <span><a href={portfolioItem.webLink} target="_blank" rel="noreferrer">{portfolioItem.webLink}</a></span></li>
+                                    {portfolioItem.webLink && (
+                                        <li>
+                                            Web - <span><a href={portfolioItem.webLink} target="_blank" rel="noreferrer">{portfolioItem.title}</a></span>
+                                        </li>
+                                    )}
                                 </ul>
                             </div>
                         </div>

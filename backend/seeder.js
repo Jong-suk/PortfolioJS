@@ -16,10 +16,7 @@ dotenv.config();
 connectDB();
 
 const importData = async () => {
-  try {
-    // await ProfilePic.deleteMany()
-    // await PDF.deleteMany()
-    // await PortfolioItem.deleteMany(); 
+  try { 
 
     for (const pic of proPics) {
       const { name, imageUrl } = pic;
@@ -72,7 +69,7 @@ const importData = async () => {
     console.log('All portfolio items inserted.'.green.inverse);
 
   } catch (error) {
-    console.error('Error inserting profile pictures:', `${error}`.red.inverse);
+    console.error('Error while inserting the data:', `${error}`.red.inverse);
   } finally {
     mongoose.connection.close();
   }

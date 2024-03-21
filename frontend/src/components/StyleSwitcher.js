@@ -41,20 +41,20 @@ const StyleSwitcher = () => {
         }
     }, [color]);
 
-    const updateIcon = () => {
-        const dayNightIcon = document.querySelector('.day-night i');
-        if (dayNightIcon) {
-        if (theme === 'dark') {
-            dayNightIcon.classList.remove('fa-moon');
-            dayNightIcon.classList.add('fa-sun');
-        } else {
-            dayNightIcon.classList.remove('fa-sun');
-            dayNightIcon.classList.add('fa-moon');
-        }
-        }
-    };
-
     useEffect(() => {
+        const updateIcon = () => {
+            const dayNightIcon = document.querySelector('.day-night i');
+            if (dayNightIcon) {
+                if (theme === 'dark') {
+                    dayNightIcon.classList.remove('fa-moon');
+                    dayNightIcon.classList.add('fa-sun');
+                } else {
+                    dayNightIcon.classList.remove('fa-sun');
+                    dayNightIcon.classList.add('fa-moon');
+                }
+            }
+        };
+
         updateIcon();
     }, [theme]);
 
@@ -67,7 +67,9 @@ const StyleSwitcher = () => {
                 <i className={`fas ${theme === 'light' ? 'fa-moon' : 'fa-sun'}`}></i>
             </div>
             <div className={`theme-colors ${open ? 'open' : ''}`}>
-                <h4>Theme Colors</h4>
+                <h4 style={{ margin: '0 0 10px', color: 'var(--text-black-700)', fontSize: '18px', fontWeight: '600', textTransform: 'capitalize' }}>
+                    Theme Colors
+                </h4>
                 <div className="colors">
                 {alternateStyles.map((style) => (
                     <span
