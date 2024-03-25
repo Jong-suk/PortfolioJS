@@ -17,6 +17,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "express": "^4.18.3",
     "express-async-handler": "^1.2.0",
     "fs.promises": "^0.1.2",
