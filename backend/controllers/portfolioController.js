@@ -29,19 +29,19 @@ const getPortfolioItemById = asyncHandler(async (req, res) => {
     
     if (portfolioItem) {
       try {
-        const imgSrcBase64 = portfolioItem.imgSrc.toString('base64');
+        // const imgSrcBase64 = portfolioItem.imgSrc.toString('base64');
         
-        const screenshotsBase64 = await Promise.all(
-            portfolioItem.screenshots.map(async (screenshotBuffer) => {
-              const base64 = screenshotBuffer.toString('base64');
-              return `data:image/jpeg;base64,${base64}`;
-            })
-          );
+        // const screenshotsBase64 = await Promise.all(
+        //     portfolioItem.screenshots.map(async (screenshotBuffer) => {
+        //       const base64 = screenshotBuffer.toString('base64');
+        //       return `data:image/jpeg;base64,${base64}`;
+        //     })
+        //   );
   
         const portfolioItemWithBase64Images = {
           ...portfolioItem.toJSON(),
-          imgSrc: `data:image/jpeg;base64,${imgSrcBase64}`,
-          screenshots: screenshotsBase64
+          // imgSrc: `data:image/jpeg;base64,${imgSrcBase64}`,
+          // screenshots: screenshotsBase64
         };
   
         res.json(portfolioItemWithBase64Images);
