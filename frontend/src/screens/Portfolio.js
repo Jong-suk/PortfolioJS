@@ -13,7 +13,7 @@ const Portfolio = () => {
     const fetchPortfolioItems = async () => {
       try {
         setLoading(true);
-        const {data} = await axios.get('/api/portfolio');
+        const {data} = await axios.get('https://portfoliojs-1q2i.onrender.com/api/portfolio');
         setPortfolioItems(data);
         setLoading(false);
       } catch (error) {
