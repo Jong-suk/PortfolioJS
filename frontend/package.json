@@ -1,9 +1,8 @@
 {
-  "homepage": "https://jong-suk.github.io/PortfolioJS/",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "https://portfoliojs-1q2i.onrender.com",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
     "@testing-library/jest-dom": "^5.17.0",
