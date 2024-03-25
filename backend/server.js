@@ -23,7 +23,7 @@ if(process.env.NODE_ENV === 'development'){
 
 app.use(express.json())
 
-app.use('/api/home', homeRoutes);
+app.use('/home', homeRoutes);
 app.use('/api/about', aboutRoutes);
 app.use('/api/portfolio', portfolioRoutes);
 

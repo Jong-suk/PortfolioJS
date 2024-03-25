@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await fetch('/api/home');
+        const response = await fetch('/home');
         const data = await response.blob();
         const url = URL.createObjectURL(data);
         setImageUrl(url);

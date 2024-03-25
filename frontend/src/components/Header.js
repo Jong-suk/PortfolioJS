@@ -31,7 +31,9 @@ const Header = ({ openMenu }) => {
       <div className="container">
         <div className="row justify-content-between">
           <div className="logo">
-           <Link to="/">A</Link>
+           <Link to="/">
+            <i className="fas fa-home"></i>
+          </Link>
           </div>
           <div className="hamburger-btn outer-shadow hover-in-shadow" onClick={openMenu}>
             <span></span>
