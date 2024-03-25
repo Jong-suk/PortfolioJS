@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Image } from 'react-bootstrap'
-import axios from 'axios'
 
 const Home = () => {
   const [imageUrl, setImageUrl] = useState('');
@@ -9,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await axios.get('/api/home');
+        const response = await fetch('https://portfoliojs-1q2i.onrender.com/api/home');
         const data = await response.blob();
         const url = URL.createObjectURL(data);
         setImageUrl(url);
