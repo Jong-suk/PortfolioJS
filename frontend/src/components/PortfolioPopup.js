@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Loader from './Loader';
+import { Image } from 'react-bootstrap';
 
 const PortfolioPopup = ({portfolioItem}) => {
     const [slideIndex, setSlideIndex] = useState(0);
@@ -94,7 +95,7 @@ const PortfolioPopup = ({portfolioItem}) => {
                     </div>
                     <div className="pp-close-btn outer-shadow hover-in-shadow" onClick={handleClosePopup}>&times;</div>
                     <div className="pp-image-container">
-                        <img src={portfolioItem.screenshots[slideIndex]} alt="img" className="pp-img outer-shadow" />
+                        <Image src={portfolioItem.screenshots[slideIndex]} alt="img" className="pp-img outer-shadow" />
                         {/* pp navigation */}
                         <div className="pp-prev" onClick={handlePrevSlide}><i className="fas fa-play"></i></div>
                         <div className="pp-next" onClick={handleNextSlide}><i className="fas fa-play"></i></div>
