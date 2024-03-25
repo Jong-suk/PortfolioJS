@@ -10,10 +10,10 @@ const getPortfolioItems = asyncHandler( async (req, res) => {
         }
         
         const portfolioItemsWithBase64Images = await Promise.all(portfolioItems.map(async (item) => {
-            const imgSrcBase64 = item.imgSrc.toString('base64');
+            // const imgSrcBase64 = item.imgSrc.toString('base64');
             return {
               ...item.toJSON(),
-              imgSrc: `data:image/jpeg;base64,${imgSrcBase64}`
+              // imgSrc: `data:image/jpeg;base64,${imgSrcBase64}`
             };
         }));
       

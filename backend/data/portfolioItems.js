@@ -133,7 +133,6 @@ const portfolioItems = [
       "title": "SalesCart Connect",
       "imgSrc": "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/thumb/project-8.png",
       "screenshots": [
-        "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/0.png",
         "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/1.png",
         "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/2.png",
         "C:/Users/abhut/OneDrive/Desktop/MERN/portfolio/frontend/public/img/portfolio/large/project-8/3.png",

@@ -43,20 +43,20 @@ const importData = async () => {
     console.log('PDF inserted successfully.'.green.inverse);
 
     for (const item of portfolioItems) {
-      const imgSrcBuffer = await fs.promises.readFile(item.imgSrc);
+    //   const imgSrcBuffer = await fs.promises.readFile(item.imgSrc);
 
-      const screenshotsBuffer = await Promise.all(
-        item.screenshots.map(async (screenshotPath) => {
-          const screenshotBuffer = await fs.promises.readFile(screenshotPath);
-          return screenshotBuffer;
-        })
-      );
+    //   const screenshotsBuffer = await Promise.all(
+    //     item.screenshots.map(async (screenshotPath) => {
+    //       const screenshotBuffer = await fs.promises.readFile(screenshotPath);
+    //       return screenshotBuffer;
+    //     })
+    //   );
 
       await PortfolioItem.create({
         category: item.category,
         title: item.title,
-        imgSrc: imgSrcBuffer,
-        screenshots: screenshotsBuffer,
+        imgSrc: item.imgSrc,
+        screenshots: item.screenshots,
         description: item.description,
         date: item.date,
         tools: item.tools,

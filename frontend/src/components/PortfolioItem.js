@@ -11,6 +11,7 @@ const PortfolioItem = ({ _id, category, title, imgSrc }) => {
         const fetchImage = async () => {
             try {
               setLoading(true);
+              console.log("Img Src: ", imgSrc);
               const response = await fetch(imgSrc);
               const data = await response.blob();
               const url = URL.createObjectURL(data);

@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const portfolioItemSchema = new mongoose.Schema({
   category: String,
   title: String,
-  imgSrc: Buffer,
-  screenshots: [Buffer],
+  imgSrc: String,
+  screenshots: [String],
   description: String,
   date: String,
   tools: [String],
