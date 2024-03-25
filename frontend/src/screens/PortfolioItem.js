@@ -17,7 +17,6 @@ const PortfolioItem = () => {
                     throw new Error('Portfolio item not found');
                 }
                 const data = await response.json();
-                console.log(data);
                 setPortfolioItem(data);
                 setLoading(false);
             } catch (error) {
