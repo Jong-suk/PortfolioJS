@@ -12,7 +12,7 @@ const PortfolioItem = () => {
         const fetchPortfolioItem = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`/api/portfolio/${id}`);
+                const response = await fetch(`https://portfoliojs-1q2i.onrender.com/api/portfolio/${id}`);
                 if (!response.ok) {
                     throw new Error('Portfolio item not found');
                 }

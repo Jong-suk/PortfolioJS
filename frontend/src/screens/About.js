@@ -9,7 +9,7 @@ const About = () => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await fetch('/api/about/image');
+        const response = await fetch('https://portfoliojs-1q2i.onrender.com/api/about/image');
         const data = await response.blob();
         const url = URL.createObjectURL(data);
         setImageUrl(url);
@@ -25,7 +25,7 @@ const About = () => {
     
     const fetchPdf = async () => {
       try {
-        const response = await fetch('/api/about/pdf'); 
+        const response = await fetch('https://portfoliojs-1q2i.onrender.com/api/about/pdf'); 
         const blob = await response.blob();
         const cv = URL.createObjectURL(blob);
         setPdfUrl(cv);
