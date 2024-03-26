@@ -36,14 +36,37 @@
         margin-bottom: 40px;
         max-width: 350px;
     }
+    .effect-1 {
+        width: 15vw;
+        height: 15vw;
+        border: 1vw solid #ff6347;
+        right: 10%;
+    } 
+    .effect-2 {
+        left: 5%;
+        bottom: 38%;
+        width: 10vw;
+    }
+    .effect-2 div {
+        height: 1.5vw;
+        width: 1.5vw;
+        margin: 0 0.3vw 1vw;
+    }
     .effect-3{
-        margin-left: -60px;
+        margin-left: -20vw;
     }
     .effect-4{
-        Left: 15%;
+        Left: 10%;
     }
-    .effect-5{
-        right: 4%;
+    .effect-5 {
+        height: 6vh;
+        width: 6vh;
+        right: 5%;
+        top: 46%;
+    }
+    .effect-5 div {
+        width: 0.4vh;
+        height: 2vh;
     }
     .about-section .about-img{
         justify-content: center;

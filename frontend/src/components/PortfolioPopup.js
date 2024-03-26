@@ -4,7 +4,6 @@ import { Image } from 'react-bootstrap';
 
 const PortfolioPopup = ({portfolioItem}) => {
     const [slideIndex, setSlideIndex] = useState(0);
-    const [showProjectDetails, setShowProjectDetails] = useState(false);
     const [loading, setLoading] = useState(false);
     const popupRef = useRef(null);
 
@@ -14,6 +13,7 @@ const PortfolioPopup = ({portfolioItem}) => {
                 setLoading(true);
                 await new Promise(resolve => setTimeout(resolve, 2000));
                 setLoading(false);
+                setSlideIndex(0);
             } catch (error) {
                 console.error('Error fetching data:', error);
                 setLoading(false);
@@ -23,30 +23,21 @@ const PortfolioPopup = ({portfolioItem}) => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSlideIndex((prevIndex) => (prevIndex + 1) % portfolioItem.screenshots.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [portfolioItem.screenshots.length]);
+
     const handlePrevSlide = () => {
         setSlideIndex((prevIndex) => (prevIndex === 0 ? portfolioItem.screenshots.length - 1 : prevIndex - 1));
     };
 
     const handleNextSlide = () => {
         setSlideIndex((prevIndex) => (prevIndex === portfolioItem.screenshots.length - 1 ? 0 : prevIndex + 1));
-    };
-
-    const toggleProjectDetails = () => {
-        if (showProjectDetails) {
-            setShowProjectDetails(false);
-            setTimeout(() => {
-                const projectDetailsContainer = document.querySelector(".pp-details");
-                projectDetailsContainer.style.maxHeight = 0 + "px";
-            }, 100);
-        } else {
-            setShowProjectDetails(true);
-            setTimeout(() => {
-                const projectDetailsContainer = document.querySelector(".pp-details");
-                projectDetailsContainer.style.maxHeight = projectDetailsContainer.scrollHeight + "px";
-                popupRef.current.scrollTop = projectDetailsContainer.offsetTop;
-            }, 100);
-        }
-    };
+    }; 
     
     const handleClosePopup = () => {
         window.location.href = '/portfolio';
@@ -55,7 +46,9 @@ const PortfolioPopup = ({portfolioItem}) => {
     return (
         <div className="pp portfolio-popup" ref={popupRef}>
             {loading && <Loader />}
-            <div className={`pp-details ${showProjectDetails ? 'active' : ''}`}>
+
+            <div className={`pp-details `}>
+                <div className="pp-close-btn outer-shadow hover-in-shadow" onClick={handleClosePopup}>&times;</div>
                 <div className="pp-details-inner">
                     <div className="pp-title">
                         <h2>{portfolioItem.title}</h2>
@@ -86,26 +79,28 @@ const PortfolioPopup = ({portfolioItem}) => {
                 </div>
             </div>
 
-            <div className="separator"></div>
-
             <div className="pp-main">
                 <div className="pp-main-inner">
-                    <div className="pp-project-details-btn outer-shadow hover-in-shadow" onClick={toggleProjectDetails}>
-                        Project Details <i className={`fas ${showProjectDetails ? 'fa-minus' : 'fa-plus'}`}></i>
-                    </div>
-                    <div className="pp-close-btn outer-shadow hover-in-shadow" onClick={handleClosePopup}>&times;</div>
                     <div className="pp-image-container">
+                        <div className="pp-prev" onClick={handlePrevSlide}><i className="fas fa-chevron-left"></i></div>
+                        <div className="pp-next" onClick={handleNextSlide}><i className="fas fa-chevron-right"></i></div>
                         <Image src={portfolioItem.screenshots[slideIndex]} alt="img" className="pp-img outer-shadow" />
-                        {/* pp navigation */}
-                        <div className="pp-prev" onClick={handlePrevSlide}><i className="fas fa-play"></i></div>
-                        <div className="pp-next" onClick={handleNextSlide}><i className="fas fa-play"></i></div>
                     </div>
-                    <div className="pp-counter">{slideIndex + 1} of {portfolioItem.screenshots.length}</div>
+
+                    <div className="pp-circles">
+                        {portfolioItem.screenshots.map((_, index) => (
+                            <div
+                                key={index}
+                                className={`pp-circle ${index === slideIndex ? 'active' : ''}`}
+                            />
+                        ))}
+                    </div>
                 </div>
                 <div className="pp-loader">
                     <div></div>
                 </div>
             </div>
+            
         </div>
     );
 };

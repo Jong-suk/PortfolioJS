@@ -73,12 +73,6 @@ const Portfolio = () => {
             >
               Web UI/UX
             </span>
-            <span
-              className={`filter-item ${activeCategory === 'art' ? 'active outer-shadow' : ''}`}
-              onClick={() => handleCategoryFilter('art')}
-            >
-              art
-            </span>
           </div>
         </div>
 

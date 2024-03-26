@@ -9,12 +9,13 @@ global style
 --------------------*/
 /*--Custom Variable Definition--*/
 :root {
-    --skin-color:#fb839e;
+    --skin-color:#2eb1ed;
     --bg-black-900: #000000;
     --bg-black-100: #dddddd;
     --bg-black-50: #eff0f4;
     --bg-white-50: #2b2c2f;
-    --bg-opacity: rgba(255, 255, 255, 0.5);
+    --bg-opacity: rgba(255, 255, 255, 0.5);   
+    --bg-opacity1: rgba(0, 0, 0, 0.5);
     --text-black-900: #000000;
     --text-black-700: #555555;
     --text-black-600: #666666;
@@ -31,6 +32,7 @@ body.dark {
     --bg-black-50: #2b2c2f;
     --bg-white-50: #eff0f4;
     --bg-opacity: rgba(0, 0, 0, 0.5);
+    --bg-opacity1: rgba(255, 255, 255, 0.5);
     --text-black-900: #ffffff;
     --text-black-700: #ffffff;
     --text-black-600: #bbbbbb;
@@ -135,9 +137,9 @@ img{
     z-index: -1;
 }
 .effect-1 {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #ff6347;
+    width: 5vw;
+    height: 5vw;
+    border: 0.5vw solid #ff6347;
     right: 15%;
     bottom: 15%;
     animation: spin 8s linear infinite;
@@ -145,46 +147,47 @@ img{
 .effect-2 {
     left: 5%;
     bottom: 25%;
-    width: 60px;
+    width: 6vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 .effect-2 div {
-    height: 5px;
-    width: 5px;
+    height: 0.5vw;
+    width: 0.5vw;
     background-color: #9370db;
-    margin: 0 2px 8px;
-    animation: bounce 2s ease-in-out infinite;
+    margin: 0 0.2vw 0.8vw;
+    animation: bounce 5s ease-in-out infinite;
+    border-radius: 50%;
 }
 .effect-3 {
-    height: 200px;
-    width: 200px;
-    border: 30px solid var(--skin-color);
+    height: 23vh;
+    width: 25vh;
+    border: 3vh solid var(--skin-color);
     border-radius: 50%;
     left: 50%;
-    top: -150px;
-    animation: bounceInLeft 4s ease-in-out infinite;
+    top: -15vh;
+    animation: bounceInLeft 8s ease-in-out infinite;
 }
 .effect-4 {
-    border-top: 40px solid transparent;
-    border-left: 40px solid #20b2aa;
+    border-top: 6vh solid transparent;
+    border-left: 6vh solid #20b2aa;
     left: 20%;
     top: 15%;
     animation: spin 12s linear infinite;
 }
 .effect-4:before {
     content: '';
-    border-top: 40px solid transparent;
-    border-left: 40px solid #20b2aa;
+    border-top: 6vh solid transparent;
+    border-left: 6vh solid #20b2aa;
     position: absolute;
     opacity: 0.7;
-    left: -45px;
-    top: -30px;
+    left: -5vh;
+    top: -4.5vh;
 }
 .effect-5 {
-    height: 60px;
-    width: 60px;
+    height: 8vh;
+    width: 8vh;
     right: 6%;
     top: 35%;
     display: flex;
@@ -195,8 +198,8 @@ img{
     animation: rotate 8s linear infinite;
 }
 .effect-5 div {
-    width: 4px;
-    height: 20px;
+    width: 0.4vh;
+    height: 4vh;
     background-color: #4169e1;
     transform-origin: bottom;
     animation: scaleUp 2s ease-in-out infinite alternate;
@@ -206,7 +209,7 @@ img{
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(-360deg);
     }
 }
 @keyframes bounce {
@@ -214,7 +217,7 @@ img{
         transform: translateY(0);
     }
     50% {
-        transform: translateY(10px);
+        transform: translateY(15vh);
     }
 }
 @keyframes bounceInLeft {
@@ -222,7 +225,7 @@ img{
         transform: translateX(0);
     }
     50% {
-        transform: translateX(-20px);
+        transform: translateX(-20vw);
     }
 }
 @keyframes rotate {
@@ -456,6 +459,9 @@ Navigation Menu
 .nav-menu .close-nav-menu:after{
     border-radius: 50%;
 }
+.nav-menu .close-nav-menu:hover{
+    color: var(--skin-color);
+}
 .nav-menu-inner{
     min-height: 100vh;
     display: flex;
@@ -519,7 +525,7 @@ Home Section
 .home-section .home-img{
     flex: 0 0 50%;
     max-width: 50%;
-    padding: 0 15px;
+    padding: 0 10px;
 }
 .home-section .home-text p{
     color: var(--text-black-600);
@@ -1001,13 +1007,10 @@ Portfolio Popup
     max-width: 1350px;
     width: calc(85% + 30px);
     margin: auto;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-.portfolio-popup .pp-details.active{
+    max-height: 1000px;
+    display: block; 
     opacity: 1;
+    transition: all 0.5s ease;
 }
 .portfolio-popup .pp-details-inner{
     padding: 30px 0;
@@ -1032,6 +1035,9 @@ Portfolio Popup
 .portfolio-popup .pp-title p span{
     font-weight: 400;
     text-transform: capitalize;
+}
+.portfolio-popup .pp-project-details{
+    padding: 0 15px;
 }
 .portfolio-popup .pp-project-details h3{
     font-size: 20px;
@@ -1086,87 +1092,43 @@ Portfolio Popup
     color: var(--skin-color);
 }
 .portfolio-popup .info ul li:last-child{
-    margin-bottom: 0;
-}
-.portfolio-popup .separator{
-    height: 1px;
-    width: 100%;
-    display: block;
-    background-color: var(--bg-black-100);
+    margin-bottom: 10px;
 }
 .portfolio-popup .pp-image-container {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .portfolio-popup .pp-img{
-    max-width: 100%;
+    max-width: 90%;
     width: auto;
     height: auto;
     padding: 10px;
     border-radius: 5px;
 }
-.portfolio-popup .pp-main{
-    min-height: 100vh;
-    max-width: 1350px;
-    width: 85%;
-    margin: auto;
+.portfolio-popup .pp-circles {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
-.portfolio-popup .pp-main-inner{
-    padding: 70px 0 50px;
-    position: relative;
-}
-.portfolio-popup .pp-project-details-btn{
-    position: absolute;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--skin-color);
-    cursor: pointer;
-    padding: 0 15px;
-    left: 0;
-    top: 15px;
-    height: 40px;
-    line-height: 40px;
-    transition: all 0.3s ease;
-}
-.portfolio-popup .pp-project-details-btn i{
-    margin-left: 4px;
-}
-.portfolio-popup .pp-project-details-btn::after{
-    border-radius: 30px;
-}
-.portfolio-popup .pp-close-btn{
-    position: absolute;
-    right: 0;
-    height: 40px;
-    width: 40px;
-    top: 15px;
+.portfolio-popup .pp-circle {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 35px;
-    font-size: 35px;
-    color: var(--text-black-600);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    background-color: var(--bg-opacity1);
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
 }
-.portfolio-popup .pp-close-btn::after{
-    border-radius: 50%;
-}
-.portfolio-popup .pp-counter{
-    position: absolute;
-    right: 0;
-    height: 40px;
-    line-height: 40px;
-    bottom: 5px;
-    font-size: 16px;
-    color: var(--text-black-600);
+.portfolio-popup .pp-circle.active {
+    background-color: var(--skin-color);
 }
 .portfolio-popup .pp-prev,
 .portfolio-popup .pp-next{
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -1174,7 +1136,7 @@ Portfolio Popup
     font-size: 20px;
     cursor: pointer;
     z-index: 1010;
-    color: var(--text-black-900);
+    color: black;
     transition: all 0.3s ease;
     opacity: 0.5;
     background-color: rgba(255, 255, 255, 0.5);
@@ -1190,14 +1152,42 @@ Portfolio Popup
 .portfolio-popup .pp-next i{
     line-height: 40px;
 }
-.portfolio-popup .pp-prev i{
-    transform: rotate(180deg);
-}
 .portfolio-popup .pp-prev{
-    left: 25px;
+    left: 8%;
 }
 .portfolio-popup .pp-next{
-    right: 25px;
+    right: 8%;
+}
+.portfolio-popup .pp-main{
+    max-width: 1350px;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.portfolio-popup .pp-main-inner{
+    padding: 20px 0 50px;
+    position: relative;
+}
+.portfolio-popup .pp-close-btn{
+    position: absolute;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    top: 15px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 35px;
+    color: var(--text-black-600);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.portfolio-popup .pp-close-btn:hover{
+    color: var(--skin-color);
+}
+.portfolio-popup .pp-close-btn::after{
+    border-radius: 50%;
 }
 
 /*--------------------
@@ -1275,12 +1265,18 @@ Contact Section
     text-align: right;
     padding: 0 15px;
 }
-.contact-section .message-popup {
+.message-popup {
     position: fixed;
     top: 50%;
-    left: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
+    max-width: 400px;
     padding: 10px;
     text-align: center;
     z-index: 9999;
+    visibility: hidden;
+}
+.message-popup.visible {
+    visibility: visible;
 }

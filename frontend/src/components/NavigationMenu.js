@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+import StyleSwitcher from './StyleSwitcher'
+
 const NavigationMenu = ({ isOpen, closeMenu }) => {
   const [activeLink, setActiveLink] = useState('/');
 
@@ -17,10 +19,11 @@ const NavigationMenu = ({ isOpen, closeMenu }) => {
     closeMenu();
     setActiveLink(path);
   };
-
+  
   return (
     <nav className={`nav-menu ${menuClassName}`}>
       <div className="close-nav-menu outer-shadow hover-in-shadow" onClick={closeMenu}>&times;</div>
+      <StyleSwitcher />
       <div className="nav-menu-inner">
         <ul>
           <li>

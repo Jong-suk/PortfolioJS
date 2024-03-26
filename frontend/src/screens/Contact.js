@@ -139,11 +139,11 @@ const Contact = () => {
             </form>
           </div>
         </div>
-              {message && (
-                <div className={`message-popup ${message.variant}`}>
-                  <Message variant={message.variant}>{message.text}</Message>
-                </div>
-              )}
+        {message && (
+          <div className={`message-popup ${message.variant ? 'visible' : ''}`}>
+            <Message variant={message.variant}>{message.text}</Message>
+          </div>
+        )}
       </div>
     </section>
   );

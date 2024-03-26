@@ -9,7 +9,6 @@ import './css/style-switcher.css'
 
 import Header from './components/Header'
 import NavigationMenu from './components/NavigationMenu'
-import StyleSwitcher from './components/StyleSwitcher'
 
 import Home from './screens/Home';
 import About from './screens/About';
@@ -30,7 +29,6 @@ const App = () => {
       <Router>
         <Header openMenu={toggleMenu}/>
         <Container>
-          <StyleSwitcher />
           <Routes>
             <Route path="/" element={<Home />} exact />
             <Route path="/about" element={<About />} />

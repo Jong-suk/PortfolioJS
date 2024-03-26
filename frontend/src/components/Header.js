@@ -21,7 +21,7 @@ const Header = ({ openMenu }) => {
   }, []);
 
   useEffect(() => {
-      toggleHeaderBackground(); // Initial check on mount
+      toggleHeaderBackground();
   }, []); 
 
   const headerClass = scrollBackground ? 'scroll-background' : '';

@@ -43,14 +43,6 @@ const importData = async () => {
     console.log('PDF inserted successfully.'.green.inverse);
 
     for (const item of portfolioItems) {
-    //   const imgSrcBuffer = await fs.promises.readFile(item.imgSrc);
-
-    //   const screenshotsBuffer = await Promise.all(
-    //     item.screenshots.map(async (screenshotPath) => {
-    //       const screenshotBuffer = await fs.promises.readFile(screenshotPath);
-    //       return screenshotBuffer;
-    //     })
-    //   );
 
       await PortfolioItem.create({
         category: item.category,
